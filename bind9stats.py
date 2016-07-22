@@ -61,7 +61,8 @@ GraphConfig = (
                   "TruncatedResp", "RespEDNS0", "QrySuccess", "QryAuthAns",
                   "QryNoauthAns", "QryReferral", "QryNxrrset", "QrySERVFAIL",
                   "QryFORMERR", "QryNXDOMAIN", "QryRecursion", "QryDuplicate",
-                  "QryDropped", "QryFailure"),
+                  "QryDropped", "QryFailure", "RateDropped", "RateSlipped",
+                  "RPZRewrites"),
           config=dict(type='DERIVE', min=0))),
 
     ('dns_cachedb',
@@ -70,7 +71,7 @@ GraphConfig = (
           stattype='cachedb',
           args='-l 0',
           vlabel='Count/sec',
-          location="views/view[@name='_default']/cache[@name='_default']/rrset",
+          location="views/view[@name='default']/cache[@name='default']/rrset",
           config=dict(type='DERIVE', min=0))),
 
     ('dns_resolver_stats',
@@ -88,7 +89,7 @@ GraphConfig = (
           stattype='counter',
           args='-l 0',
           vlabel='Count/sec',
-          location="views/view[@name='_default']/counters[@type='resqtype']/counter",
+          location="views/view[@name='default']/counters[@type='resqtype']/counter",
           config=dict(type='DERIVE', min=0))),
 
     ('dns_resolver_stats_view',
@@ -97,7 +98,7 @@ GraphConfig = (
           stattype='counter',
           args='-l 0',
           vlabel='Count/sec',
-          location="views/view[@name='_default']/counters[@type='resstats']/counter",
+          location="views/view[@name='default']/counters[@type='resstats']/counter",
           config=dict(type='DERIVE', min=0))),
 
     ('dns_cachestats',
@@ -106,7 +107,7 @@ GraphConfig = (
           stattype='counter',
           args='-l 0',
           vlabel='Count/sec',
-          location="views/view[@name='_default']/counters[@type='cachestats']/counter",
+          location="views/view[@name='default']/counters[@type='cachestats']/counter",
           config=dict(type='DERIVE', min=0))),
 
     ('dns_socket_stats',
@@ -160,7 +161,7 @@ GraphConfig = (
           stattype='counter',
           args='-l 0',
           vlabel='Count/sec',
-          location="views/view[@name='_default']/counters[@type='adbstat']/counter",
+          location="views/view[@name='default']/counters[@type='adbstat']/counter",
           config=dict(type='DERIVE', min=0))),
 
 )
