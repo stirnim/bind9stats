@@ -128,7 +128,7 @@ GraphConfig = (
           location="views/view[@name='default']/counters[@type='resstats']/counter",
           config=dict(type='DERIVE', min=0))),
 
-    ('dns_resolver_stats_view',
+    ('dns_resolver_ip_stats_view',
      dict(title='BIND_DNS [09] IP Resolver Stats',
           enable=True,
           stattype='counter',
